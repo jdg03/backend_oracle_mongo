@@ -1,8 +1,8 @@
 import { Schema, model } from 'mongoose';
 
 const paisSchema = new Schema({
-  nombre: String,
-  abreviatura: String,
+  nombre: { type: String, required: true },
+  abreviatura: { type: String, required: true },
 });
 
 const Pais = model('Paises', paisSchema);

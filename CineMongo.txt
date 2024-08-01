@@ -1,0 +1,120 @@
+use cineMongo
+
+db.paises.insertOne({ nombre: "Estados Unidos", 
+abreviatura: "USA" 
+});
+
+var pais = db.paises.findOne({ nombre: "Estados Unidos" });
+
+db.directores.insertOne({ 
+ nombre: "Jon Favreau",
+ nacionalidad_id: pais._id 
+ });
+
+var director = db.directores.findOne({ nombre: "Jon Favreau" });
+
+db.productoras.insertOne({
+  nombre: "Marvel",
+  nacionalidad_id: pais._id
+});
+
+var productora = db.productoras.findOne({ nombre: "Marvel" });
+
+db.actores.insertOne({
+  nombre: "Robert Downey Jr.",
+  nacionalidad_id: pais._id
+});
+
+var actor = db.actores.findOne({ nombre: "Robert Downey Jr." });
+
+
+db.peliculas.insertOne({
+  titulo: "Iron Man"
+});
+
+var pelicula = db.peliculas.findOne({ titulo: "Iron Man" });
+
+db.imagenes.insertOne({
+  url: "https://example.com/ironman.jpg",
+  peliculas: pelicula._id
+});
+
+
+
+
+db.clips_peliculas.insertOne({
+  url: "https://example.com/ironman_clip.mp4",
+  pelicula: pelicula._id
+});
+
+db.categorias.insertOne({
+  nombre: "Acción",
+  descripcion: "Películas que destacan por escenas de acción intensas y emocionantes."
+});
+
+var categoria = db.categorias.findOne({ nombre: "Acción" });
+
+db.idiomas.insertOne({
+  nombre: "Inglés",
+  abreviatura: "EN"
+});
+
+var idioma = db.idiomas.findOne({ nombre: "Inglés" });
+
+db.formato_de_proyeccion.insertOne({
+  nombre: "IMAX",
+  resolucion: "4K"
+});
+
+var formato_de_proyeccion = db.formato_de_proyeccion.findOne({ nombre: "IMAX" });
+
+
+db.banda_sonora.insertOne({
+  titulo: "Iron Man Theme",
+  compositor: "Ramin Djawadi",
+  duracion: 3.15, // Duración en minutos
+  url: "https://example.com/ironman_theme.mp3"
+});
+
+var banda_sonora = db.banda_sonora.findOne({ compositor: "Ramin Djawadi" });
+
+db.clasificacion.insertOne({
+  nombre: "PG-13",
+  descripcion: "Parental Guidance-13: Some material may be inappropriate for children under 13.",
+  edad_minima: 13,
+  pais: "Estados Unidos"
+});
+
+var clasificacion = db.clasificacion.findOne({ nombre: "PG-13" });
+
+db.estrenos.insertOne({
+  fecha_estreno: new Date("2008-05-02"),
+  pelicula_id: pelicula._id // Usando el ID de la película como llave foránea
+});
+
+db.reparto.insertOne({
+  actor:actor._id,
+  pelicula: pelicula._id
+});
+
+db.categorias_x_pelicula.insertOne({
+  categoria_id:categoria._id,
+  pelicula_id: pelicula._id
+});
+
+db.detalles_pelicula.insertOne({
+  pelicula_id: pelicula._id,
+  pais: pais._id,
+  sinopsis: "Un empresario millonario construye un traje blindado y lo usa para combatir el crimen y el terrorismo.",
+  director_id: director._id,
+  banda_sonora: banda_sonora._id,
+  productora: productora._id,
+  idioma: idioma._id,
+  "fecha_estreno": new Date("2008-05-02"), // Usar comillas para nombres con espacios
+  clasificacion: clasificacion._id,
+  duracion: 126,
+  url_caratula: "https://static.wikia.nocookie.net/marvelcinematicuniverse/images/b/bf/Iron_Man_1_Portada.png/revision/latest?cb=20191029194450&path-prefix=es",
+  url_trailer: "https://youtu.be/8ugaeA-nMTc?si=5BE9ORCuNvi7vNgs",
+  formato_de_proyeccion: formato_de_proyeccion._id
+});
+
