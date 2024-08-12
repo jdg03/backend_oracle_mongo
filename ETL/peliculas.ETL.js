@@ -9,19 +9,18 @@ export const transferData = async (req, res) => {
     const nombrePelicula = req.params.nombre; // Extraer el nombre de la URL
   
     try {
-      // Buscar el director específico
+     
       const director = await Director.findOne({ nombre: 'Martin Scorsese' }).populate('nacionalidad_id').exec();
       if (!director) throw new Error('Director no encontrado');
   
-      // Buscar el país específico
+     
       const pais = await Pais.findOne({ nombre: 'Estados Unidos' }).exec();
       if (!pais) throw new Error('País no encontrado');
   
-      // Buscar la productora específica
+     
       const productora = await Productora.findOne({ nombre: 'Marvel' }).exec();
       if (!productora) throw new Error('Productora no encontrada');
   
-      // Insertar en Oracle
       const sql = `INSERT INTO peliculas (id_pelicula, nombre, director, pais, productora) VALUES (:id_pelicula, :nombre, :director, :pais, :productora)`;
       const datos = {
         id_pelicula:2,
