@@ -1,4 +1,4 @@
-// models/Actor.js
+
 import { Schema, model } from 'mongoose';
 
 const actorSchema = new Schema({

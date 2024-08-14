@@ -1,14 +1,10 @@
-// config/oracle.js
+
 import oracledb from 'oracledb';
 
 const oracleConfig = {
-    user: "USER_DEVELOPER",
+    user: "C##DW",
     password: "oracle",
-    connectString: "localhost:1521/xe", // Ajusta esto según tu configuración
-    poolAlias: "default",
-    poolMax: 10,
-    poolMin: 2,
-    poolIncrement: 1,
+    connectString: "localhost:1521/xe",
 };
 
 export async function connectOracle() {

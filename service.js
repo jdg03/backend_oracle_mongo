@@ -13,7 +13,7 @@ import directorRouter from './routes/directores.routes.js';
 import productorasRouter from './routes/productoras.routes.js';
 
 
-import routertransferData from './oraclesRoutes/peliculas.ETl.routes.js';
+
 
 
 // Configuración para poder usar __dirname con ES modules
@@ -41,7 +41,7 @@ app.use(paisRouter);
 app.use(actorRouter);
 app.use(directorRouter);
 app.use(productorasRouter);
-app.use(routertransferData);
+
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;
