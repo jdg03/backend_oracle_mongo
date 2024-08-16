@@ -11,9 +11,12 @@ import paisRouter from './routes/paises.routes.js';
 import actorRouter from './routes/actores.routes.js';
 import directorRouter from './routes/directores.routes.js';
 import productorasRouter from './routes/productoras.routes.js';
+import bandaSonoraRouter from './routes/banda.Sonora.routes.js';
+import idiomaRauter from './routes/idiomas.routes.js';
+import clasificacionRouter from './routes/clasificaciones.routes.js';
+import formatosRouter from './routes/formatosProyeccion.routes.js';
 
-
-
+import ETLRouter from './routes/ETLS.routes.js';
 
 
 // Configuración para poder usar __dirname con ES modules
@@ -41,6 +44,12 @@ app.use(paisRouter);
 app.use(actorRouter);
 app.use(directorRouter);
 app.use(productorasRouter);
+app.use(bandaSonoraRouter);
+app.use(idiomaRauter);
+app.use(formatosRouter);
+app.use(clasificacionRouter);
+
+app.use(ETLRouter);
 
 
 // Iniciar el servidor

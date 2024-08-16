@@ -7,5 +7,5 @@ const bandaSonoraSchema = new Schema({
 });
 
 const BandaSonora = model('Banda_sonora', bandaSonoraSchema);
-s
+
 export default BandaSonora;

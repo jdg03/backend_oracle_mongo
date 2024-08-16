@@ -5,7 +5,7 @@ const formatoProyeccionSchema = new Schema({
   resolucion: { type: String, required: true },
 });
 
-const FomatoProyeccion = model('Formato_de_proyeccion', formatoProyeccionSchema);
+const FomatoProyeccion = model('Formato_de_proyecciones', formatoProyeccionSchema);
 
 export default FomatoProyeccion;
 
