@@ -15,6 +15,7 @@ import bandaSonoraRouter from './routes/banda.Sonora.routes.js';
 import idiomaRauter from './routes/idiomas.routes.js';
 import clasificacionRouter from './routes/clasificaciones.routes.js';
 import formatosRouter from './routes/formatosProyeccion.routes.js';
+import proximamenteRouter from './routes/proximamente.routes.js';
 
 import ETLRouter from './routes/ETLS.routes.js';
 
@@ -48,6 +49,7 @@ app.use(bandaSonoraRouter);
 app.use(idiomaRauter);
 app.use(formatosRouter);
 app.use(clasificacionRouter);
+app.use(proximamenteRouter);
 
 app.use(ETLRouter);
 

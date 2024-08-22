@@ -2,8 +2,10 @@
 import { Schema, model } from 'mongoose';
 
 const proximamenteSchema = new Schema({
-  fecha_estreno: { type: Date, required: true },
-  pelicula_id: { type: Schema.Types.ObjectId, ref: 'Peliculas', required: true },
+  titulo: { type: String},
+  sipnosis: { type: String},
+  fecha_estreno: { type: Date},
+  url_caratula: { type: String},
 });
 
 const Proximamente = model('Proximamente', proximamenteSchema);
