@@ -13,7 +13,7 @@ export const actoresETL = async (req, res) => {
           pais: actor.nacionalidad_id?.nombre || null
       }));
 
-      //res.json(actoresDesnormalizados);
+      res.json(actoresDesnormalizados);
 
       const oracleConnection = await getOracleConnection();
 

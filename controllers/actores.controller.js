@@ -1,5 +1,7 @@
 import Actor from "../models/actores.schema.js";
 
+import { Database } from "../database/mongo.js";
+
 export async function getActores(req, res) {
   try {
     const actores = await Actor.find();
